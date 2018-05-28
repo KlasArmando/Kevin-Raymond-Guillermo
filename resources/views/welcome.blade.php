@@ -92,8 +92,14 @@
                     <a href="https://laravel-news.com">Product List</a>
                     <a href="https://forge.laravel.com">Our Journey</a>
                     <a href="https://github.com/laravel/laravel">Contact</a>
-					<a href="https://github.com/laravel/laravel">guillermo</a>
-                </div>    
+					          <a href="https://github.com/laravel/laravel">guillermo</a>
+                    <a href="https://laravel.com/docs">Blog</a>
+                    <a href="https://laracasts.com">Random Location</a>
+                    <a href="https://laravel-news.com">Product List</a>
+                    <a href="https://forge.laravel.com">Our Journey</a>
+                    <a href="https://github.com/laravel/laravel">Contact</a>
+					          <a href="https://github.com/laravel/laravel">guillermo</a>
+                </div>
             </div>
         </div>
     </body>
