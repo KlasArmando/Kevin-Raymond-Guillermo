@@ -26,7 +26,7 @@
             }
 
             .full-height {
-                height: 20vh;
+                height: 50vh;
             }
 
             .flex-center {
@@ -47,6 +47,11 @@
 
             .content {
                 text-align: center;
+            }
+
+            .content2 {
+                text-align: center;
+                margin-top: 50px;
             }
 
             .title {
@@ -97,7 +102,7 @@
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Blog</a>
+                    <a href="blog">Blogs</a>
                     <a href="https://laracasts.com">Random Location</a>
                     <a href="https://laravel-news.com">Product List</a>
                     <a href="https://forge.laravel.com">Our Journey</a>
@@ -105,15 +110,14 @@
                 </div>
 
                 <div class="titleBorder">
-                  <div class="invisibleBorderText">
-                    where ever you want to go
-                  </div>
+                  _
                 </div>
 
                 <div class="content2">
-                    @yield('content')
+                    @yield('content2')
                 </div>
             </div>
+
 
         </div>
     </body>
