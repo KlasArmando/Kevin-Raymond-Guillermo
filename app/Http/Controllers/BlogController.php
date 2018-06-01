@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\blog;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Auth;
 
 class BlogController extends Controller
 {
@@ -43,6 +44,8 @@ class BlogController extends Controller
       $blogposts = new blog;
       $blogposts->title = request('title');
       $blogposts->description = request('description');
+      $blogposts->content = request('content');
+
 
       $blogposts->save();
       return redirect('blog');
@@ -83,6 +86,7 @@ class BlogController extends Controller
     {
       $blog->title = request('title');
       $blog->description = request('description');
+      $blog->content = request('content');
 
       $blog->save();
       return redirect('blog');

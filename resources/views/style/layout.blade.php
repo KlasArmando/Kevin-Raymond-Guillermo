@@ -7,6 +7,7 @@
 
         <title>Skoetrbojz</title>
 
+
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
@@ -16,6 +17,9 @@
                 background: #d9d9d9;  /* fallback for old browsers */
                 background: -webkit-linear-gradient(to bottom, #f2f2f2, #a6a6a6);  /* Chrome 10-25, Safari 5.1-6 */
                 background: linear-gradient(to bottom, #f2f2f2, #a6a6a6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                background-repeat: no-repeat;
+                background-position: right top;
+                background-attachment: fixed;
 
                 background-color: #d9d9d9;
                 color: #636b6f;
@@ -26,7 +30,7 @@
             }
 
             .full-height {
-                height: 50vh;
+                height: -50vh;
             }
 
             .flex-center {
@@ -50,7 +54,6 @@
             }
 
             .content2 {
-                text-align: center;
                 margin-top: 50px;
             }
 
@@ -80,7 +83,8 @@
 
             .m-b-md {
                 margin-bottom: 30px;
-            }
+              }
+
         </style>
     </head>
     <body>
@@ -103,10 +107,10 @@
 
                 <div class="links">
                     <a href="blog">Blogs</a>
-                    <a href="https://laracasts.com">Random Location</a>
-                    <a href="https://laravel-news.com">Product List</a>
-                    <a href="https://forge.laravel.com">Our Journey</a>
-                    <a href="https://github.com/laravel/laravel">Contact</a>
+                    <a href="location">Random Location</a>
+                    <a href="shop">Product List</a>
+                    <a href="ourJourney">Our Journey</a>
+                    <a href="contact">Contact</a>
                 </div>
 
                 <div class="titleBorder">
