@@ -81,7 +81,7 @@ input[type=text] {
     border-radius: 4px;
 }
 
-input[type=submit],[type=reset] {
+input[type=submit],[type=reset],[type=button] {
     background-color: #F2F2F2; /* Green */
     border: none;
     color: black;
@@ -95,7 +95,7 @@ input[type=submit],[type=reset] {
     transition-duration: 0.4s;
 }
 
-input[type=submit]:hover,[type=reset]:hover {
+input[type=submit]:hover,[type=reset]:hover,[type=button]:hover {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 </style>

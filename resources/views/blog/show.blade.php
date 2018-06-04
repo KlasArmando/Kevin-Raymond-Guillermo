@@ -66,6 +66,10 @@
               <div class="fakeimg">Image</div>
             </div>
             <div class="card">
+              <h3>Edit me!</h3>
+              <button><a href="{{$blog->id}}/edit">Here</a></button>
+            </div>
+            <div class="card">
               <h3>Follow Me</h3>
               <p>Some text..</p>
             </div>

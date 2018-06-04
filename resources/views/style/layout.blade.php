@@ -104,7 +104,7 @@
                 <div class="title m-b-md">
                     Skoetrbojz
                 </div>
-
+              
                 <div class="links">
                     <a href="blog">Blogs</a>
                     <a href="location">Random Location</a>
