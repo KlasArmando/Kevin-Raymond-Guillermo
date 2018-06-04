@@ -31,6 +31,11 @@
               <p>{{$blog->content}}</p>
             </div>
             <div class="card">
+              <h2>Photo's</h2>
+              <div class="fakeimg" style="height:200px;">Image</div>
+
+            </div>
+            <div class="card">
               <h2>Maps</h2>
 
               <div id="googleMap" style="width:800px;height:400px;"></div>
