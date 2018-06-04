@@ -3,11 +3,11 @@
     Name:<br>
     <input type="text" name="name" >
     <br>
-    Email:<br>
-    <input type="text" name="email" >
+    Description:<br>
+    <input type="text" name="description" >
     <br>
-    Password:<br>
-    <input type="text" name="password">
+    Images:<br>
+    <input type="" name="images">
     <br><br>
     <input type="submit" value="Submit">
 </form>
