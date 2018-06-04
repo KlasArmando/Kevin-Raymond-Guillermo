@@ -16,6 +16,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/upload', function () {
+    return view('upload');
+});
+
 Route::get('/ourJourney', function () {
     $name = "Our Journey";
     return view('ourJourney' ,compact($name));

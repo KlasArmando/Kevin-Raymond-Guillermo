@@ -13,9 +13,6 @@
 
         <!-- Fonts -->
         <!-- Styles -->
-        <style>
-
-        </style>
     </head>
 
     <body>
@@ -29,19 +26,22 @@
             <div class="leftcolumn">
               <div class="card">
                 <h2>Title</h2>
-
                 <h5>
                   Description of your trip in short:<br>
-                  <textarea name="description" rows="2" cols="60" placeholder="Describe..."></textarea>
+                  <textarea name="description" rows="2" cols="60" wrap="hard" placeholder="Describe..."></textarea>
                   ,created_at
                 </h5>
                 <div class="fakeimg" style="height:200px;">Image</div>
                 <p>
                   Detailt description of your trip:<br>
-                  <textarea name="content" rows="5" cols="60" placeholder="Describe..."></textarea>
+                  <textarea name="content" rows="5" cols="60" wrap="hard" placeholder="Describe..."></textarea>
                 </p>
               </div>
+              <div class="card">
+                <h2>Photo's</h2>
+                <div class="fakeimg" style="height:200px;">Image</div>
 
+              </div>
               <div class="card">
                 <h2>Maps</h2>
 
