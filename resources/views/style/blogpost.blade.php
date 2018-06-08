@@ -59,7 +59,7 @@
 
  /* style for the buttons */
 .button {
-    background-color: #F2F2F2; /* Green */
+    background-color: #F2F2F2;
     border: none;
     color: white;
     padding: 15px 32px;

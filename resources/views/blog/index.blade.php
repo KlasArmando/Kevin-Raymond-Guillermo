@@ -31,7 +31,13 @@
                 <h2>{{$post->title}}</h2>
                 <h5>{{$post->description}}, {{$post->created_at}}</h5>
                 <div class="fakeimg" style="height:200px;">Image</div>
-                <p><button><a href='blog/{{$post->id}}'>Click for full blog</a></button></p>
+                <p>
+                  <button>
+                    <a href='blog/{{$post->id}}'>
+                      Click for full blog
+                    </a>
+                  </button>
+                </p>
               </div>
             @endforeach
 
