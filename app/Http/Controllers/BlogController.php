@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\blog;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Auth;
@@ -16,7 +17,11 @@ class BlogController extends Controller
      */
     public function index()
     {
-      $blogposts = blog::all();
+      // $blogposts = blog::all();
+      $blogposts = blog::orderByDesc("created_at")->paginate(2);
+      foreach ($blogposts as $blog) {
+        $blog->username = User::whereId($blog->user_id)->first()->name . " [" . User::whereId($blog->user_id)->first()->role . "]";
+      }
 
       return view('blog/index', compact('blogposts'));
     }
@@ -39,15 +44,32 @@ class BlogController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Blog $blog)
     {
-      $blogposts = new blog;
-      $blogposts->title = request('title');
-      $blogposts->description = request('description');
-      $blogposts->content = request('content');
+      // $blogposts = new blog;
+      // $blogposts->title = request('title');
+      // $blogposts->description = request('description');
+      // $blogposts->content = request('content');
+      // $blogposts->youDescription = request('youDescription');
+      // $blogposts->youNationality = request('youNationality');
+      // $blogposts->youAge = request('youAge');
+      //
+      //
+      // $blogposts->save();
+      // return redirect('blog');
 
+      $post = new blog();
+      $post->title = $request['title'];
+      $post->description = $request['description'];
+      $post->content = $request['content'];
+      $post->youDescription = $request['youDescription'];
+      $post->youNationality = $request['youNationality'];
+      $post->youAge = $request['youAge'];
+      $post->user_id = Auth::id();
 
-      $blogposts->save();
+      $post->save();
+
+      // $request->user()->blogs()->save($post);
       return redirect('blog');
     }
 
@@ -60,6 +82,8 @@ class BlogController extends Controller
     public function show(blog $blog)
     {
       //$ingredient = DB::table('ingredients')->where('id', $gerechten->ingredients_id)->first();
+      // $blog = blog::orderByDesc("created_at");
+      $blog->username = User::whereId($blog->user_id)->first()->name;
 
       return view('blog/show', compact('blog'));
     }
@@ -87,6 +111,9 @@ class BlogController extends Controller
       $blog->title = request('title');
       $blog->description = request('description');
       $blog->content = request('content');
+      $blog->youDescription = request('youDescription');
+      $blog->youNationality = request('youNationality');
+      $blog->youAge = request('youAge');
 
       $blog->save();
       return redirect('blog');

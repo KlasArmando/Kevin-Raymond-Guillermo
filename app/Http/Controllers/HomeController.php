@@ -25,6 +25,11 @@ class HomeController extends Controller
     {
         $request->user()->authorizeRoles(['user', 'moderator', 'admin']);
 
+        // $blogposts = blog::orderByDesc("created_at")->paginate(2);
+        // foreach ($blogposts as $blog) {
+        //   $blog->username = User::whereId($blog->user_id)->first()->name . " [" . User::whereId($blog->user_id)->first()->role . "]";
+        // }
+
         return view('home');
     }
 }

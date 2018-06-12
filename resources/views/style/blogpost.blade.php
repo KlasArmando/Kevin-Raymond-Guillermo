@@ -10,7 +10,7 @@
   /* Left column */
 .leftcolumn {
   float: left;
-  width: 65%;
+  width: 69%;
 }
 
   /* Right column */
@@ -98,4 +98,22 @@ input[type=submit],[type=reset],[type=button] {
 input[type=submit]:hover,[type=reset]:hover,[type=button]:hover {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
+
+.pagination {
+    display: inline-block;
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
 </style>

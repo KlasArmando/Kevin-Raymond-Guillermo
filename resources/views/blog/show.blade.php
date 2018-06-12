@@ -38,7 +38,7 @@
             <div class="card">
               <h2>Maps</h2>
 
-              <div id="googleMap" style="width:800px;height:400px;"></div>
+              <div id="googleMap" style="width:600px;height:400px;"></div>
                 {{-- {{$blog->id}} --}}
                 <script>
                   function myMap() {
@@ -55,9 +55,20 @@
           </div>
           <div class="rightcolumn">
             <div class="card">
-              <h2>About Me</h2>
+              <h2>About Me,</h2>
+              {{-- <h3>{{ Auth::user()->username }}</h3> --}}
+              <h3>{{ $blog->username }}{{ $blog->role }}</h3>
+              {{-- <h3>Username</h3> --}}
               <div class="fakeimg" style="height:100px;">Image</div>
-              <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+                <br>
+              <h4>Me in short:</h4>
+              <h5>{{$blog->youDescription}}</h5>
+                <br>
+              <h4>Nationality:</h4>
+              <h5>{{$blog->youNationality}}</h5>
+                <br>
+              <h4>Age:</h4>
+              <h5>{{$blog->youAge}}</h5>
             </div>
             <div class="card">
               <h3>Popular Post</h3>

@@ -45,7 +45,7 @@
           <div class="rightcolumn">
             <div class="card">
               <h2>Share your own journey</h2>
-              <button><a href="blog/create">Create here</a></button>
+              {{-- <button><a href="blog/create">Create here</a></button> --}}
             </div>
             <div class="card">
               <h3>Popular Post</h3>
@@ -58,6 +58,9 @@
               <p>Some text..</p>
             </div>
           </div>
+        </div>
+        <div class="pagination">
+          {{$blogposts->links()}}
         </div>
     </body>
 

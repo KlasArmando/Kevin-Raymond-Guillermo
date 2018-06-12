@@ -110,7 +110,7 @@
                 </div>
 
                 <div class="links">
-                    <a href="blog">Blogs</a>
+                    <a href="{{ url('/blog') }}">Blogs</a>
                     <a href="location">Random Location</a>
                     <a href="shop">Product List</a>
                     <a href="location">Travel ads</a>
