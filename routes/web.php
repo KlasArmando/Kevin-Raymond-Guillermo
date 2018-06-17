@@ -11,6 +11,12 @@
 |
 */
 Route::resource('/blog', 'BlogController');
+Route::resource('/user', 'HomeController');
+
+// route to show the login form
+Route::get('login', array('uses' => 'HomeController@showLogin'));
+// route to process the form
+Route::post('login', array('uses' => 'HomeController@doLogin'));
 
 Route::get('/', function () {
     return view('welcome');
@@ -24,3 +30,7 @@ Route::get('/ourJourney', function () {
     $name = "Our Journey";
     return view('ourJourney' ,compact($name));
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

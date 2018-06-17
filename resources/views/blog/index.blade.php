@@ -31,7 +31,13 @@
                 <h2>{{$post->title}}</h2>
                 <h5>{{$post->description}}, {{$post->created_at}}</h5>
                 <div class="fakeimg" style="height:200px;">Image</div>
-                <p><button><a href='blog/{{$post->id}}'>Click for full blog</a></button></p>
+                <p>
+                  <button>
+                    <a href='blog/{{$post->id}}'>
+                      Click for full blog
+                    </a>
+                  </button>
+                </p>
               </div>
             @endforeach
 
@@ -39,7 +45,7 @@
           <div class="rightcolumn">
             <div class="card">
               <h2>Share your own journey</h2>
-              <button><a href="blog/create">Create here</a></button>
+              {{-- <button><a href="blog/create">Create here</a></button> --}}
             </div>
             <div class="card">
               <h3>Popular Post</h3>
@@ -52,6 +58,10 @@
               <p>Some text..</p>
             </div>
           </div>
+        </div>
+          <br>
+        <div class="pagination">
+          {{$blogposts->links()}}
         </div>
     </body>
 

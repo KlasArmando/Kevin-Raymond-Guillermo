@@ -62,9 +62,19 @@
             </div>
             <div class="rightcolumn">
               <div class="card">
-                <h2>About Me</h2>
+                <h2>About Me,</h2>
+                {{-- <h3>{{ Auth::user()->username }}</h3> --}}
                 <div class="fakeimg" style="height:100px;">Image</div>
-                <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+                  <br>
+                <h4>Me in short:</h4>
+                <textarea name="youDescription" rows="1" cols="40" wrap="hard" placeholder="Describe you in short"></textarea>
+                  <br>
+                <h4>Nationality:</h4>
+                <input type="text" name="youNationality" rows="1" cols="40" wrap="hard" placeholder="Youre land">
+                  <br>
+                <h4>Age:</h4>
+                <input type="text" name="youAge" rows="1" cols="40" wrap="hard" placeholder="Youre age">
+
               </div>
               <div class="card">
                 <h3>Popular Post</h3>

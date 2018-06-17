@@ -5,12 +5,13 @@
   font-size: 40px;
   text-align: center;
   background: white;
+  box-shadow: 7px 7px 5px grey;
 }
 
   /* Left column */
 .leftcolumn {
   float: left;
-  width: 65%;
+  width: 69%;
 }
 
   /* Right column */
@@ -25,6 +26,7 @@
   background-color: #aaa;
   width: 100%;
   padding: 20px;
+  box-shadow: 7px 7px 5px grey;
 }
 
   /* Add a card effect for articles */
@@ -32,6 +34,7 @@
   background-color: white;
   padding: 20px;
   margin-top: 20px;
+  box-shadow: 7px 7px 5px grey;
 }
 
   /* Clear floats after the columns */
@@ -59,7 +62,7 @@
 
  /* style for the buttons */
 .button {
-    background-color: #F2F2F2; /* Green */
+    background-color: #F2F2F2;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -98,4 +101,23 @@ input[type=submit],[type=reset],[type=button] {
 input[type=submit]:hover,[type=reset]:hover,[type=button]:hover {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
+
+.pagination {
+    display: inline-block;
+    list-style: none;
+}
+
+.pagination li {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.pagination li.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.pagination li:hover:not(.active) {background-color: #ddd;}
 </style>

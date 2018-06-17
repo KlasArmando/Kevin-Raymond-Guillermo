@@ -4,9 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class blog extends Model
+class Role extends Model
 {
-  public function users(){
+  public function users()
+    {
     return $this->belongsToMany(User::class);
-  }
+    }
 }

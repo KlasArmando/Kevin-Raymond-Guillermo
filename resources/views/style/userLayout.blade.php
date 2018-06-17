@@ -57,10 +57,8 @@
                 margin-top: 50px;
             }
 
-            .title > a{
+            .title {
                 font-size: 84px;
-                text-decoration: none;
-                text-transform: uppercase;
             }
 
             .titleBorder {
@@ -91,37 +89,7 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">{{ Auth::user()->roles->first()->name }} panel</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                  <a href="{{ url('/') }}">
-                    Skoetrbojz
-                  </a>
-                </div>
-
-                <div class="links">
-                    <a href="{{ url('/blog') }}">Blogs</a>
-                    <a href="location">Random Location</a>
-                    <a href="shop">Product List</a>
-                    <a href="location">Travel ads</a>
-                    <a href="ourJourney">Our Journey</a>
-                    <a href="contact">Contact</a>
-                </div>
-
-                <div class="titleBorder">
-                  _
-                </div>
-
+            
                 <div class="content2">
                     @yield('content2')
                 </div>
