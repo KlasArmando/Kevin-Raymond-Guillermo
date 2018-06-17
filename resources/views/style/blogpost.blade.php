@@ -5,6 +5,7 @@
   font-size: 40px;
   text-align: center;
   background: white;
+  box-shadow: 7px 7px 5px grey;
 }
 
   /* Left column */
@@ -25,6 +26,7 @@
   background-color: #aaa;
   width: 100%;
   padding: 20px;
+  box-shadow: 7px 7px 5px grey;
 }
 
   /* Add a card effect for articles */
@@ -32,6 +34,7 @@
   background-color: white;
   padding: 20px;
   margin-top: 20px;
+  box-shadow: 7px 7px 5px grey;
 }
 
   /* Clear floats after the columns */
@@ -101,19 +104,20 @@ input[type=submit]:hover,[type=reset]:hover,[type=button]:hover {
 
 .pagination {
     display: inline-block;
+    list-style: none;
 }
 
-.pagination a {
+.pagination li {
     color: black;
     float: left;
     padding: 8px 16px;
     text-decoration: none;
 }
 
-.pagination a.active {
+.pagination li.active {
     background-color: #4CAF50;
     color: white;
 }
 
-.pagination a:hover:not(.active) {background-color: #ddd;}
+.pagination li:hover:not(.active) {background-color: #ddd;}
 </style>

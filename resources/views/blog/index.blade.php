@@ -59,6 +59,7 @@
             </div>
           </div>
         </div>
+          <br>
         <div class="pagination">
           {{$blogposts->links()}}
         </div>

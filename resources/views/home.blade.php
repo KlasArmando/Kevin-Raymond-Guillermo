@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@extends('layouts/aboutYouForm')
+@extends('layouts/style')
 
 @section('content')
   <div class="page">
@@ -7,21 +7,43 @@
     <html>
       <div class="leftcolumn">
 
-        {{-- @foreach ($blogposts as $post)
-          <div class="card">
-            <h2>{{$post->title}}</h2>
-            <h5>{{$post->description}}, {{$post->created_at}}</h5>
-            <div class="fakeimg" style="height:200px;">Image</div>
-            <p>
+      <h1>Your Posts</h1>
+      <div class="card">
+        <table border="1px">
+          <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Created At</th>
+            <th>Full post</th>
+            <th>Edit post</th>
+          </tr>
+        @foreach ($blogposts as $post)
+          <tr>
+            <td> {{$post->title}}       </td>
+            <td> {{$post->description}} </td>
+            <td> {{$post->created_at}}  </td>
+            <td>
               <button>
                 <a href='blog/{{$post->id}}'>
-                  Click for full blog
+                  Full blog
                 </a>
               </button>
-            </p>
-          </div>
-        @endforeach --}}
+            </td>
+            <td>
+              <button>
+                <a href='blog/{{$post->id}}/edit'>
+                  Edit blog
+                </a>
+              </button>
+            </td>
+          </tr>
+        @endforeach
+        </table>
+      </div>
 
+        <div class="pagination">
+          {{$blogposts->links()}}
+        </div>
       </div>
     </html>
   </div>

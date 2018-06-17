@@ -18,10 +18,10 @@ class BlogController extends Controller
     public function index()
     {
       // $blogposts = blog::all();
-      $blogposts = blog::orderByDesc("created_at")->paginate(2);
-      foreach ($blogposts as $blog) {
-        $blog->username = User::whereId($blog->user_id)->first()->name . " [" . User::whereId($blog->user_id)->first()->role . "]";
-      }
+      $blogposts = blog::orderByDesc("created_at")->paginate(7);
+      // foreach ($blogposts as $blog) {
+      //   $blog->username = User::whereId($blog->user_id)->first()->name;
+      // }
 
       return view('blog/index', compact('blogposts'));
     }

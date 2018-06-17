@@ -11,7 +11,7 @@
 |
 */
 Route::resource('/blog', 'BlogController');
-Route::resource('/post', 'PostController');
+Route::resource('/user', 'HomeController');
 
 // route to show the login form
 Route::get('login', array('uses' => 'HomeController@showLogin'));
