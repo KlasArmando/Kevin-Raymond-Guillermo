@@ -96,7 +96,7 @@
                     <a href="#">Product List</a>
                     <a href="location">Travel ads</a>
                     <a href="#">Our Journey</a>
-                    <a href="#">Contact</a>
+                    <a href="contact">Contact</a>
                 </div>
             </div>
         </div>

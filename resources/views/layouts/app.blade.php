@@ -55,6 +55,9 @@
                                 </a>
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{url('/home')}}">
+                                      {{ Auth::user()->roles->first()->name }} panel
+                                    </a>
                                     <a class="dropdown-item" href="blog/create">
                                       Create Post
                                     </a>

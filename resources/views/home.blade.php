@@ -7,6 +7,26 @@
     <html>
       <div class="leftcolumn">
 
+      {{-- <h1>Your Account</h1>
+        <table border="1px">
+          <tr>
+            <th>name</th>
+            <th>username</th>
+            <th>email</th>
+          </tr>
+          @foreach ($users as $user)
+          <tr>
+            <td>
+              <button>
+                <a href="user/{{$user->id}}/edit">
+                  klik
+                </a>
+              </button>
+            </td>
+          </tr>
+        @endforeach
+        </table> --}}
+
       <h1>Your Posts</h1>
       <div class="card">
         <table border="1px">

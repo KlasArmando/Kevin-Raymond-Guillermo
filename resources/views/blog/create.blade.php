@@ -96,7 +96,21 @@
     </body>
     <footer>
         <div class="footer">
-          <h2>Footer</h2>
+          <button class="button hoverButton">
+            <a href="{{ url('/') }}">
+            Home Page
+            </a>
+          </button>
+          <button class="button hoverButton">
+            <a href="{{ url('/blog') }}">
+            Blog page
+            </a>
+          </button>
+          <button class="button hoverButton">
+            <a href="{{ url('/contact') }}">
+            Contact
+            </a>
+          </button>
         </div>
     </footer>
 </html>
