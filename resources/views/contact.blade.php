@@ -11,11 +11,21 @@
     <div class="card">
       <h1>Contact</h1>
     </div>
+
+    <h4>Contact Admin</h4>
     <div class="card">
       <h3>Name: Admin</h3>
-      <h3>Phone number: 0612345678</h3>
       <h3>Email: admin@admin.com</h3>
     </div>
+      <br><br>
+
+    <h4>Contact others</h4>
+    @foreach ($users as $user)
+      <div class="card">
+        <h3>Name: {{$user->name}}</h3>
+        <h3>Email: {{$user->email}}</h3>
+      </div>
+    @endforeach
   </body>
     <br><br><br><br><br><br><br><br>
   <footer>
