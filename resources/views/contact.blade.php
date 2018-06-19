@@ -9,10 +9,15 @@
   </head>
   <body>
     <div class="card">
-      <h1>Our Journey</h1>
+      <h1>Contact</h1>
+    </div>
+    <div class="card">
+      <h3>Name: Admin</h3>
+      <h3>Phone number: 0612345678</h3>
+      <h3>Email: admin@admin.com</h3>
     </div>
   </body>
-    <br><br><br><br><br><br><br><br> <br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
   <footer>
       <div class="footer">
         <button class="button hoverButton">

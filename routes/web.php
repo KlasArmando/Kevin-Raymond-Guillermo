@@ -1,5 +1,9 @@
 <?php
 
+use App\blog;
+use App\User;
+use Illuminate\Support\Facades\Input;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,10 +17,10 @@
 Route::resource('/blog', 'BlogController');
 Route::resource('/user', 'HomeController');
 
-// route to show the login form
 Route::get('login', array('uses' => 'HomeController@showLogin'));
-// route to process the form
 Route::post('login', array('uses' => 'HomeController@doLogin'));
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/', function () {
     return view('welcome');
@@ -27,10 +31,46 @@ Route::get('/upload', function () {
 });
 
 Route::get('/ourJourney', function () {
-    $name = "Our Journey";
-    return view('ourJourney' ,compact($name));
+    return view('ourJourney');
 });
 
-Auth::routes();
+Route::get('/contact', function () {
+    return view('contact');
+});
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::any ( '/searchBlog', function () {
+	$q = Input::get ( 'q' );
+	if($q != ""){
+		$blog = blog::where ( 'title', 'LIKE', '%' . $q . '%' )->orWhere ( 'description', 'LIKE', '%' . $q . '%' )->get ();
+		if (count ( $blog ) > 0)
+			return view ( 'blog/search' )->withDetails ( $blog )->withQuery ( $q );
+		else
+			return view ( 'blog/search' )->withMessage ( 'No Details found. Try to search again !' );
+	}
+	return view ( 'blog/search' )->withMessage ( 'No Details found. Try to search again !' );
+} );
+
+Route::any ( '/searchAdminBlog', function () {
+	$q = Input::get ( 'q' );
+	if($q != ""){
+		$blog = blog::where ( 'title', 'LIKE', '%' . $q . '%' )->orWhere ( 'description', 'LIKE', '%' . $q . '%' )->get ();
+		if (count ( $blog ) > 0)
+			return view ( 'adminSearchBlog' )->withDetails ( $blog )->withQuery ( $q );
+		else
+			return view ( 'adminSearchBlog' )->withMessage ( 'No Details found. Try to search again !' );
+	}
+	return view ( 'adminSearchBlog' )->withMessage ( 'No Details found. Try to search again !' );
+} );
+
+Route::any ( '/searchUser', function () {
+	$q = Input::get ( 'q' );
+	if($q != ""){
+		// $blog = blog::where ( 'title', 'LIKE', '%' . $q . '%' )->orWhere ( 'description', 'LIKE', '%' . $q . '%' )->get ();
+    $user = User::where ( 'name', 'LIKE', '%' . $q . '%' )->orWhere ( 'email', 'LIKE', '%' . $q . '%' )->get ();
+		if (count ( $user ) > 0)
+			return view ( 'adminSearchUser' )->withDetails ( $user)->withQuery ( $q );
+		else
+			return view ( 'adminSearchUser' )->withMessage ( 'No Details found. Try to search again !' );
+	}
+	return view ( 'adminSearchUser' )->withMessage ( 'No Details found. Try to search again !' );
+} );

@@ -61,16 +61,16 @@
 }
 
  /* style for the buttons */
-.button {
+.button > a{
     background-color: #F2F2F2;
     border: none;
-    color: white;
-    padding: 15px 32px;
+    color: #AAAAAA;
+    padding: 10px 15px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
+    margin: 3px 1px;
     cursor: pointer;
     transition-duration: 0.4s;
 }

@@ -43,7 +43,18 @@
             @endforeach
             </table>
         </div>
-
+          <br>
+        <form action="searchAdminBlog" method="POST" role="search">
+        {{ csrf_field() }}
+          <div class="input-group">
+            <input type="text" class="form-control" name="q"
+              placeholder="Search Blog"> <span class="input-group-btn">
+              <button type="submit" class="btn btn-default">
+                <span class="glyphicon glyphicon-search">Search</span>
+              </button>
+            </span>
+          </div>
+        </form>
         <br>
 
         <h1>All Users</h1>
@@ -71,6 +82,18 @@
               @endforeach
           </table>
         </div>
+          <br>
+        <form action="searchUser" method="POST" role="search">
+        {{ csrf_field() }}
+          <div class="input-group">
+            <input type="text" class="form-control" name="q"
+              placeholder="Search User"> <span class="input-group-btn">
+              <button type="submit" class="btn btn-default">
+                <span class="glyphicon glyphicon-search">Search</span>
+              </button>
+            </span>
+          </div>
+        </form>
           <br>
         <div class="pagination">
           {{$blogposts->links()}}
