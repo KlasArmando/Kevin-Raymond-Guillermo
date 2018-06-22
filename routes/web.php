@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Input;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::resource('/blog', 'BlogController');
 Route::resource('/user', 'HomeController');
 
@@ -26,9 +27,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/upload', function () {
-    return view('upload');
+Route::get('/index', function () {
+    return view('shop/index');
 });
+Route::resource('shop' ,"ShopController");
 
 Route::get('/ourJourney', function () {
     return view('ourJourney');
