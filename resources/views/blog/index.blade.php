@@ -94,6 +94,11 @@
             Contact
             </a>
           </button>
+          <button class="button hoverButton">
+            <a href="{{ url('https://github.com/KlasArmando/Kevin-Raymond-Guillermo/') }}" target="_blank">
+            Github
+            </a>
+          </button>
         </div>
     </footer>
 </html>

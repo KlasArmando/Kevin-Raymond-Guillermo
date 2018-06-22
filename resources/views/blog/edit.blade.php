@@ -95,9 +95,11 @@
           <input type="button" value="Go back" onclick="history.back(-1)">
           {{-- <button><a href="./">Terug</a></button> --}}
       </form>
+
       <form action="{{route('blog.destroy', $blog)}}" method="POST">
         {{ method_field('DELETE') }}
         @csrf
+
         <input type="submit" value="DELETE">
       </form>
     </body>
@@ -116,6 +118,11 @@
           <button class="button hoverButton">
             <a href="{{ url('/contact') }}">
             Contact
+            </a>
+          </button>
+          <button class="button hoverButton">
+            <a href="{{ url('https://github.com/KlasArmando/Kevin-Raymond-Guillermo/') }}" target="_blank">
+            Github
             </a>
           </button>
         </div>
