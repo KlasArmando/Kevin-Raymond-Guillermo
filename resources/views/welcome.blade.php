@@ -45,8 +45,10 @@
                 text-align: center;
             }
 
-            .title {
+            .title > a{
                 font-size: 84px;
+                text-decoration: none;
+                text-transform: uppercase;
             }
 
             .links > a {
@@ -65,11 +67,12 @@
         </style>
     </head>
     <body>
+
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/home') }}">{{ Auth::user()->roles->first()->name }} panel</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
                         <a href="{{ route('register') }}">Register</a>
@@ -77,19 +80,25 @@
                 </div>
             @endif
 
+
+
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                  <a href="{{ url('/') }}">
+                    Skoetrbojz
+                  </a>
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="blog">Blogs</a>  
+                    <a href="#">Random Location</a>
+                    <a href="#">Product List</a>
+                    <a href="location">Travel ads</a>
+                    <a href="#">Our Journey</a>
+                    <a href="contact">Contact</a>
                 </div>
+
             </div>
-        </div>
+
     </body>
 </html>

@@ -14,6 +14,8 @@ namespace Psy\Test\Formatter;
 use Psy\Formatter\SignatureFormatter;
 use Psy\Reflection\ReflectionClassConstant;
 
+use Psy\Reflection\ReflectionConstant_;
+
 class SignatureFormatterTest extends \PHPUnit\Framework\TestCase
 {
     const FOO = 'foo value';
@@ -67,6 +69,18 @@ class SignatureFormatterTest extends \PHPUnit\Framework\TestCase
             [
                 new \ReflectionMethod('Psy\Test\Formatter\Fixtures\BoringTrait', 'boringMethod'),
                 'public function boringMethod($one = 1)',
+            ],
+            [
+                new ReflectionConstant_('E_ERROR'),
+                'define("E_ERROR", 1)',
+            ],
+            [
+                new ReflectionConstant_('PHP_VERSION'),
+                'define("PHP_VERSION", "' . PHP_VERSION . '")',
+            ],
+            [
+                new ReflectionConstant_('__LINE__'),
+                'define("__LINE__", null)', // @todo show this as `unknown` in red or something?
             ],
         ];
     }

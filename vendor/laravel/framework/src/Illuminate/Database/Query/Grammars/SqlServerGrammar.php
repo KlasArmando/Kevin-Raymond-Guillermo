@@ -105,6 +105,35 @@ class SqlServerGrammar extends Grammar
     }
 
     /**
+     * Compile a "JSON contains" statement into SQL.
+     *
+     * @param  string  $column
+     * @param  string  $value
+     * @return string
+     */
+    protected function compileJsonContains($column, $value)
+    {
+        $parts = explode('->', $column, 2);
+
+        $field = $this->wrap($parts[0]);
+
+        $path = count($parts) > 1 ? ', '.$this->wrapJsonPath($parts[1]) : '';
+
+        return $value.' in (select [value] from openjson('.$field.$path.'))';
+    }
+
+    /**
+     * Prepare the binding for a "JSON contains" statement.
+     *
+     * @param  mixed  $binding
+     * @return string
+     */
+    public function prepareBindingForJsonContains($binding)
+    {
+        return is_bool($binding) ? json_encode($binding) : $binding;
+    }
+
+    /**
      * Create a full ANSI offset clause for the query.
      *
      * @param  \Illuminate\Database\Query\Builder  $query
@@ -441,6 +470,32 @@ class SqlServerGrammar extends Grammar
         return sprintf('json_value(%s, \'$.%s\')', $field, collect($path)->map(function ($part) {
             return '"'.$part.'"';
         })->implode('.'));
+    }
+
+    /**
+     * Wrap the given JSON selector.
+     *
+     * @param  string  $value
+     * @return string
+     */
+    protected function wrapJsonSelector($value)
+    {
+        $parts = explode('->', $value, 2);
+
+        $field = $this->wrapSegments(explode('.', array_shift($parts)));
+
+        return 'json_value('.$field.', '.$this->wrapJsonPath($parts[0]).')';
+    }
+
+    /**
+     * Wrap the given JSON path.
+     *
+     * @param  string  $value
+     * @return string
+     */
+    protected function wrapJsonPath($value)
+    {
+        return '\'$."'.str_replace('->', '"."', $value).'"\'';
     }
 
     /**

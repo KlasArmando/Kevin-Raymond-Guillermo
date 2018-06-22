@@ -13,5 +13,22 @@ class DatabaseSeeder extends Seeder
     {
         //$this->call(UsersTableSeeder::class);
         $this->call(TraveladSeeder::class);
+
+
+        // $this->call(UsersTableSeeder::class);
+      DB::table('blogs')->insert([
+       'title' => "Eersteblog",
+      ]);
+
+      // Model::unguard();
+
+      $this->call([
+         BlogTableSeeder::class,
+         RoleTableSeeder::class,
+         UserTableSeeder::class,
+      ]);
+
+      // Model::reguard();
+
     }
 }
