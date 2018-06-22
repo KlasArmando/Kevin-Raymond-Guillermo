@@ -97,8 +97,8 @@
                     <a href="blog">Blogs</a>  
                     <a href="#">Random Location</a>
                     <a href="#">Product List</a>
-                    <a href="location">Travel ads</a>
-                    <a href="#">Our Journey</a>
+                    <a href="#">Travel ads</a>
+                    <a href="ourJourney">Our Journey</a>
                     <a href="contact">Contact</a>
                 </div>
 

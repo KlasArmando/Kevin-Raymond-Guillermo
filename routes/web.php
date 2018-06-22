@@ -2,6 +2,7 @@
 
 use App\blog;
 use App\User;
+use App\Role;
 use Illuminate\Support\Facades\Input;
 
 /*
@@ -37,7 +38,8 @@ Route::get('/ourJourney', function () {
 });
 
 Route::get('/contact', function () {
-    return view('contact');
+    $users = User::all();
+    return view('contact', compact('users'));
 });
 
 Route::any ( '/searchBlog', function () {
@@ -57,11 +59,11 @@ Route::any ( '/searchAdminBlog', function () {
 	if($q != ""){
 		$blog = blog::where ( 'title', 'LIKE', '%' . $q . '%' )->orWhere ( 'description', 'LIKE', '%' . $q . '%' )->get ();
 		if (count ( $blog ) > 0)
-			return view ( 'adminSearchBlog' )->withDetails ( $blog )->withQuery ( $q );
+			return view ( 'admin/adminSearchBlog' )->withDetails ( $blog )->withQuery ( $q );
 		else
-			return view ( 'adminSearchBlog' )->withMessage ( 'No Details found. Try to search again !' );
+			return view ( 'admin/adminSearchBlog' )->withMessage ( 'No Details found. Try to search again !' );
 	}
-	return view ( 'adminSearchBlog' )->withMessage ( 'No Details found. Try to search again !' );
+	return view ( 'admin/adminSearchBlog' )->withMessage ( 'No Details found. Try to search again !' );
 } );
 
 Route::any ( '/searchUser', function () {
@@ -70,9 +72,9 @@ Route::any ( '/searchUser', function () {
 		// $blog = blog::where ( 'title', 'LIKE', '%' . $q . '%' )->orWhere ( 'description', 'LIKE', '%' . $q . '%' )->get ();
     $user = User::where ( 'name', 'LIKE', '%' . $q . '%' )->orWhere ( 'email', 'LIKE', '%' . $q . '%' )->get ();
 		if (count ( $user ) > 0)
-			return view ( 'adminSearchUser' )->withDetails ( $user)->withQuery ( $q );
+			return view ( 'admin/adminSearchUser' )->withDetails ( $user)->withQuery ( $q );
 		else
-			return view ( 'adminSearchUser' )->withMessage ( 'No Details found. Try to search again !' );
+			return view ( 'admin/adminSearchUser' )->withMessage ( 'No Details found. Try to search again !' );
 	}
-	return view ( 'adminSearchUser' )->withMessage ( 'No Details found. Try to search again !' );
+	return view ( 'admin/adminSearchUser' )->withMessage ( 'No Details found. Try to search again !' );
 } );

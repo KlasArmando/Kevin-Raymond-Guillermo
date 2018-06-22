@@ -111,11 +111,11 @@
 
                 <div class="links">
                     <a href="{{ url('/blog') }}">Blogs</a>
-                    <a href="location">Random Location</a>
-                    <a href="shop">Product List</a>
-                    <a href="location">Travel ads</a>
-                    <a href="ourJourney">Our Journey</a>
-                    <a href="contact">Contact</a>
+                    <a href="#">Random Location</a>
+                    <a href="#">Product List</a>
+                    <a href="#">Travel ads</a>
+                    <a href="{{ url('ourJourney')}}">Our Journey</a>
+                    <a href="{{ url('contact')}}">Contact</a>
                 </div>
 
                 <div class="titleBorder">

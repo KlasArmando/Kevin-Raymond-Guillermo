@@ -19,7 +19,8 @@
     </head>
 
     <body>
-      <form action="{{route('blog.store')}}" method="POST">
+      <form action="{{route('blog.update', $blog)}}" method="POST">
+        {{ method_field('PATCH') }}
         @csrf
 
         <div class="header">

@@ -24,7 +24,7 @@
 
     <body>
 
-      <form action="search" method="POST" role="search">
+      <form action="searchBlog" method="POST" role="search">
 			{{ csrf_field() }}
 			<div class="input-group">
 				<input type="text" class="form-control" name="q"
@@ -77,6 +77,9 @@
     </div>
   </div>
     <br>
+    {{-- <div class="pagination">
+      {{$blog->links()}}
+    </div> --}}
     </body>
     <footer>
         <div class="footer">

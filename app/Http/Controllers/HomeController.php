@@ -32,7 +32,7 @@ class HomeController extends Controller
         if(Auth::user()->roles->first()->name == 'admin'){
           $blogposts = blog::orderByDesc("created_at")->paginate(7);
           $users = User::all();
-          return view('adminHome', compact('blogposts', 'users'));
+          return view('admin/adminHome', compact('blogposts', 'users'));
         }else{
           $blogposts = blog::where('user_id', Auth::id())->paginate(7);
           $users = User::all();
