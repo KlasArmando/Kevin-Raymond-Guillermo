@@ -7,6 +7,7 @@
 
         <title>Skoetrbojz</title>
 
+
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
@@ -16,6 +17,9 @@
                 background: #d9d9d9;  /* fallback for old browsers */
                 background: -webkit-linear-gradient(to bottom, #f2f2f2, #a6a6a6);  /* Chrome 10-25, Safari 5.1-6 */
                 background: linear-gradient(to bottom, #f2f2f2, #a6a6a6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                background-repeat: no-repeat;
+                background-position: right top;
+                background-attachment: fixed;
 
                 background-color: #d9d9d9;
                 color: #636b6f;
@@ -26,7 +30,7 @@
             }
 
             .full-height {
-                height: 100vh;
+                height: -50vh;
             }
 
             .flex-center {
@@ -49,10 +53,22 @@
                 text-align: center;
             }
 
-            .title > a{
+            .content2 {
+                margin-top: 50px;
+            }
+
+            .title {
                 font-size: 84px;
-                text-decoration: none;
-                text-transform: uppercase;
+            }
+
+            .titleBorder {
+                  margin-top: 10px;
+                  border-bottom: 2px solid #636b6f;
+                  border-radius:10px;
+            }
+
+            .invisibleBorderText {
+              display: none;
             }
 
             .links > a {
@@ -67,42 +83,19 @@
 
             .m-b-md {
                 margin-bottom: 30px;
-            }
+              }
+
         </style>
     </head>
     <body>
-
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">{{ Auth::user()->roles->first()->name }} panel</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
+            
+                <div class="content2">
+                    @yield('content2')
                 </div>
-            @endif
-
-
-
-            <div class="content">
-                <div class="title m-b-md">
-                  <a href="{{ url('/') }}">
-                    Skoetrbojz
-                  </a>
-                </div>
-
-                <div class="links">
-                    <a href="blog">Blogs</a>  
-                    <a href="#">Random Location</a>
-                    <a href="#">Product List</a>
-                    <a href="location">Travel ads</a>
-                    <a href="#">Our Journey</a>
-                    <a href="contact">Contact</a>
-                </div>
-
             </div>
 
+
+        </div>
     </body>
 </html>

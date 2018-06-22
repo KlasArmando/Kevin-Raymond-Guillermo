@@ -1,7 +1,7 @@
 @extends('style/layout')
 @extends('style/blogpost')
-@section('content')
-@yield('content')
+@section('content2')
+
 <!doctype html>
 <html lang="html">
     <head>
@@ -24,7 +24,7 @@
 
     <body>
 
-      <form action="searchBlog" method="POST" role="search">
+      <form action="search" method="POST" role="search">
 			{{ csrf_field() }}
 			<div class="input-group">
 				<input type="text" class="form-control" name="q"
@@ -35,48 +35,49 @@
 				</span>
 			</div>
 		</form>
-        <div class="row">
-          <div class="leftcolumn">
 
-            @foreach ($blogposts as $post)
-              <div class="card">
-                <h2>{{$post->title}}</h2>
-                <h5>{{$post->description}}, {{$post->created_at}}</h5>
-                <div class="fakeimg" style="height:200px;">Image</div>
-                <p>
-                  <button class="button hoverButton">
-                    <a href='blog/{{$post->id}}'>
-                      Click for full blog
-                    </a>
-                  </button>
-                </p>
-              </div>
-            @endforeach
+    <div class="row">
+      <div class="leftcolumn">
+        @if(isset($details))
+          @foreach ($details as $blog)
+            <div class="card">
+              <h2>{{$blog->title}}</h2>
+              <h5>{{$blog->description}}, {{$blog->created_at}}</h5>
+              <div class="fakeimg" style="height:200px;">Image</div>
+              <p>
+                <button>
+                  <a href='blog/{{$blog->id}}'>
+                    Click for full blog
+                  </a>
+                </button>
+              </p>
+            </div>
+          @endforeach
+      @elseif(isset($message))
+      <p>{{ $message }}</p>
+      @endif
+      </div>
 
-          </div>
-          <div class="rightcolumn">
-            <div class="card">
-              <h2>Share your own journey</h2>
-              {{-- <button><a href="blog/create">Create here</a></button> --}}
-            </div>
-            <div class="card">
-              <h3>Popular Post</h3>
-              <div class="fakeimg">Image</div><br>
-              <div class="fakeimg">Image</div><br>
-              <div class="fakeimg">Image</div>
-            </div>
-            <div class="card">
-              <h3>Follow Me</h3>
-              <p>Some text..</p>
-            </div>
-          </div>
-        </div>
-          <br>
-        <div class="pagination">
-          {{$blogposts->links()}}
-        </div>
+
+    <div class="rightcolumn">
+      <div class="card">
+        <h2>Share your own journey</h2>
+        {{-- <button><a href="blog/create">Create here</a></button> --}}
+      </div>
+      <div class="card">
+        <h3>Popular Post</h3>
+        <div class="fakeimg">Image</div><br>
+        <div class="fakeimg">Image</div><br>
+        <div class="fakeimg">Image</div>
+      </div>
+      <div class="card">
+        <h3>Follow Me</h3>
+        <p>Some text..</p>
+      </div>
+    </div>
+  </div>
+    <br>
     </body>
-
     <footer>
         <div class="footer">
           <button class="button hoverButton">

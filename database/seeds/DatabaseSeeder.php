@@ -10,12 +10,21 @@ class DatabaseSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
 
         // $this->call(UsersTableSeeder::class);
       DB::table('blogs')->insert([
        'title' => "Eersteblog",
       ]);
+
+      // Model::unguard();
+
+      $this->call([
+         BlogTableSeeder::class,
+         RoleTableSeeder::class,
+         UserTableSeeder::class,
+      ]);
+
+      // Model::reguard();
 
     }
 }
