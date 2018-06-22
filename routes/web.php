@@ -15,7 +15,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/ourJourney', function () {
-    $name = "Our Journey";
-    return view('ourJourney' ,compact($name));
-});
+Route::resource('travelads', 'TraveladsController');
+Route::resource('comments', 'CommentController');

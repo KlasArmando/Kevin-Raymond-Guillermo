@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Skoetrbojz</title>
+        <title>Laravel</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -13,11 +13,7 @@
         <!-- Styles -->
         <style>
             html, body {
-                background: #d9d9d9;  /* fallback for old browsers */
-                background: -webkit-linear-gradient(to bottom, #f2f2f2, #a6a6a6);  /* Chrome 10-25, Safari 5.1-6 */
-                background: linear-gradient(to bottom, #f2f2f2, #a6a6a6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-                background-color: #d9d9d9;
+                background-color: #fff;
                 color: #636b6f;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
@@ -83,17 +79,16 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Skoetrbojz
+                    Laravel
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Blog</a>
-                    <a href="https://laracasts.com">Random Location</a>
-                    <a href="https://laravel-news.com">Product List</a>
-                    <a href="https://forge.laravel.com">Our Journey</a>
-                    <a href="https://github.com/laravel/laravel">Contact</a>
-					<a href="https://github.com/laravel/laravel">guillermo</a>
-                </div>    
+                    <a href="https://laravel.com/docs">Documentation</a>
+                    <a href="https://laracasts.com">Laracasts</a>
+                    <a href="https://laravel-news.com">News</a>
+                    <a href="https://forge.laravel.com">Forge</a>
+                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                </div>
             </div>
         </div>
     </body>
