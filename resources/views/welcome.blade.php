@@ -71,6 +71,7 @@
         </style>
     </head>
     <body>
+
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -83,6 +84,8 @@
                 </div>
             @endif
 
+
+
             <div class="content">
                 <div class="title m-b-md">
                   <a href="{{ url('/') }}">
@@ -91,14 +94,15 @@
                 </div>
 
                 <div class="links">
-                    <a href="blog">Blogs</a>
+                    <a href="blog">Blogs</a>  
                     <a href="#">Random Location</a>
                     <a href="#">Product List</a>
                     <a href="#">Travel ads</a>
                     <a href="ourJourney">Our Journey</a>
                     <a href="contact">Contact</a>
                 </div>
+
             </div>
-        </div>
+
     </body>
 </html>
