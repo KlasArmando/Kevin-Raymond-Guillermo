@@ -1,7 +1,7 @@
 @extends('style/layout')
 @extends('style/blogpost')
-@section('content2')
-
+@section('content')
+@yield('content')
 <!doctype html>
 <html lang="html">
     <head>
