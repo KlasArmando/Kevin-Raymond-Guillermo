@@ -1,13 +1,21 @@
-<form action="{{route('verveling.store')}}"  method="post">
+@extends('layout');
 
+@section('content')
+
+<form action="{{route('shop.store')}}" method="post">
+
+    @csrf
     Name:<br>
-    <input type="text" name="name" >
-    <br>
-    Description:<br>
-    <input type="text" name="description" >
-    <br>
-    Images:<br>
-    <input type="" name="images">
+    <input type="text" name="name" value="">
     <br><br>
-    <input type="submit" value="Submit">
+    Desription<br>
+    <input type="text" name="description" value="">
+    <br><br>
+    Link:<br>
+    <input type="text" name="link" value="">
+    <br><br>
+    <input type="submit" value="Make">
+
 </form>
+
+@endsection

@@ -14,8 +14,8 @@ class ShopController extends Controller
      */
     public function index()
     {
-        $results = shop::all();
-        return view('shop/index' , compact('results'));
+        $shops = shop::all();
+        return view('shop/index' , compact('shops'));
     }
 
     /**
@@ -39,8 +39,8 @@ class ShopController extends Controller
         $items = new shop();
 
         $items->name = request('name');
-        $items->email = request('text');
-        $items->password = request('image');
+        $items->description = request('description');
+        $items->link = request('link');
 
         $items->save();
 
@@ -66,7 +66,7 @@ class ShopController extends Controller
      */
     public function edit(shop $shop)
     {
-        return view("shop.edit" , compact("shop"));
+        return view("shop.edit" , compact('shop'));
     }
 
     /**
@@ -78,10 +78,10 @@ class ShopController extends Controller
      */
     public function update(Request $request, shop $shop)
     {
-        $shop->name = request('name');
-        $shop->text = request('text');
-        $shop->image = request('image');
+        $shop->update($request->all());
+
         $shop->save();
+
         return redirect('shop');
     }
 

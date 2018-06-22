@@ -70,6 +70,19 @@
     </head>
     <body>
 
+        <div class="flex-center position-ref full-height">
+            @if (Route::has('login'))
+                <div class="top-right links">
+                    @auth
+                        <a href="{{ url('/home') }}">Home</a>
+                    @else
+                        <a href="{{ route('login') }}">Login</a>
+                        <a href="{{ route('register') }}">Register</a>
+                    @endauth
+                </div>
+            @endif
+
+
 
             <div class="content">
                 <div class="title m-b-md">
@@ -77,14 +90,23 @@
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Blog</a>
+
+                    <a href="blog/index.blade.php">Blog</a>
+
+                    <a href="blog">Blogs</a>
+
                     <a href="https://laracasts.com">Random Location</a>
                     <a href="https://laravel-news.com">Product List</a>
                     <a href="https://forge.laravel.com">Our Journey</a>
                     <a href="https://github.com/laravel/laravel">Contact</a>
-					<a href="shop/index.blade.php">guillermo</a>
+
+					<a href="shop">guillermo</a>
                 </div>    
+
+					          <a href="https://github.com/laravel/laravel">guillermo</a>
+                </div>
+
             </div>
-        </div>
+
     </body>
 </html>

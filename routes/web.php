@@ -11,16 +11,24 @@
 |
 */
 
+
+Route::resource('blog', 'BlogController');
+
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/ourJourney', function () {
-    $name = "Our Journey";
-    return view('ourJourney' ,compact($name));
+
+
+Route::get('/upload', function () {
+    return view('upload');
 });
 
 Route::get('/index', function () {
     return view('shop/index');
 });
-Route::resource('/shop' ,"ShopController");
+Route::resource('shop' ,"ShopController");
+
+
+

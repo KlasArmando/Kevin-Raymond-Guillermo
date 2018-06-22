@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class shop extends Model
 {
-    protected $fillable = ['name'];
-    protected $fillable1 = ['email'];
-    protected $fillable2 = ['password'];
+    protected $table = "shops";
+
+    protected $fillable =[
+        'name', 'description', 'link',
+    ];
 }
