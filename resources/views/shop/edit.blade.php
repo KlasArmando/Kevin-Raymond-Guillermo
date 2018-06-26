@@ -1,5 +1,5 @@
 @extends('layout');
-@section('content');
+@section('content4');
 
 {!! Form::open(array('url' => 'shop/'.$shop->id, 'method' => 'PATCH')) !!}
 

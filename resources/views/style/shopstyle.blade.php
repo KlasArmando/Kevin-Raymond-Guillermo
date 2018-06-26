@@ -206,8 +206,8 @@ top:1px;
 
 </style>
 <body>
-<div class="content">
-@yield('content')
+<div class="content4">
+@yield('content4')
 </div>
 
 </body>

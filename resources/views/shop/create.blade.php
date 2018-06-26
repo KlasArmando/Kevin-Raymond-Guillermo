@@ -1,6 +1,6 @@
 @extends('layout');
 
-@section('content')
+@section('content4')
 
 <form action="{{route('shop.store')}}" method="post">
 

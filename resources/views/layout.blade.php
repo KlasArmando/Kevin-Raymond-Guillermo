@@ -152,7 +152,7 @@
                 </div>
 
                 <div class="content2">
-                    @yield('content')
+                    @yield('content2')
                 </div>
             </div>
 

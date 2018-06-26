@@ -1,6 +1,6 @@
 @extends('style.shopstyle');
 
-@section('content')
+@section('content4')
 
 <html lang="{{ app()->getLocale() }}">
 <head>
