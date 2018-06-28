@@ -1,0 +1,82 @@
+//colors
+$color_alto_approx: #d9d9d9;
+$concrete: #f2f2f2;
+$color_shady_lady_approx: #a6a6a6;
+$color_nevada_approx: #636b6f;
+
+//fonts
+$font_0: Raleway;
+$font_1: sans-serif;
+
+//@extend-elements
+//original selectors
+//html, body
+%extend_1 {
+	background: $color_alto_approx;
+	background: linear-gradient(to bottom, $concrete, $color_shady_lady_approx);
+	background-repeat: no-repeat;
+	background-position: right top;
+	background-attachment: fixed;
+	background-color: $color_alto_approx;
+	color: $color_nevada_approx;
+	font-family: $font_0, $font_1;
+	font-weight: 100;
+	height: 100vh;
+	margin: 0;
+}
+
+
+html {
+	@extend %extend_1;
+}
+body {
+	@extend %extend_1;
+}
+.full-height {
+	height: -50vh;
+}
+.flex-center {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+.position-ref {
+	position: relative;
+}
+.top-right {
+	position: absolute;
+	right: 10px;
+	top: 18px;
+}
+.content {
+	text-align: center;
+}
+.content2 {
+	margin-top: 50px;
+}
+.titleBorder {
+	margin-top: 10px;
+	border-bottom: 2px solid $color_nevada_approx;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 10px;
+}
+.invisibleBorderText {
+	display: none;
+}
+.m-b-md {
+	margin-bottom: 30px;
+}
+.title > a {
+	font-size: 84px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+.links > a {
+	color: $color_nevada_approx;
+	padding: 0 25px;
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: .1rem;
+	text-decoration: none;
+	text-transform: uppercase;
+}

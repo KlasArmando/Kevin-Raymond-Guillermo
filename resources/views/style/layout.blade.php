@@ -1,3 +1,4 @@
+{{-- @extends('css/layout.scss') --}}
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>
@@ -10,9 +11,9 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
+        <link href="css/layout.css" rel="stylesheet" type="text/css">
         <!-- Styles -->
-        <style>
+        {{-- <style>
             html, body {
                 background: #d9d9d9;  /* fallback for old browsers */
                 background: -webkit-linear-gradient(to bottom, #f2f2f2, #a6a6a6);  /* Chrome 10-25, Safari 5.1-6 */
@@ -87,7 +88,34 @@
                 margin-bottom: 30px;
               }
 
-        </style>
+        </style> --}}
+		<style>
+		 @media all and (max-width: 800px) {
+                .links {
+                    justify-content: space-around;
+                }
+            }
+
+            @media all and (max-width: 600px) {
+                .links {
+                    -webkit-flex-flow: column wrap;
+                    flex-flow: column wrap;
+                    padding: 0;
+                }
+                .links a {
+                    text-align: center;
+                    padding: 10px;
+                    border-top: 1px solid rgba(255,255,255,0.3);
+                    border-bottom: 1px solid rgba(0,0,0,0.1);
+                }
+
+
+                .links :last-of-type a {
+                    border-bottom: none;
+                }
+            }
+
+		</style>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
