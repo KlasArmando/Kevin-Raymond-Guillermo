@@ -57,6 +57,15 @@ class BlogController extends Controller
       //
       // $blogposts->save();
       // return redirect('blog');
+      $validatedData = $request->validate([
+        'title' => 'required|max:20',
+        'description' => 'required|max:255',
+        'content' => 'required|max:255',
+        'youDescription' => 'required|max:255',
+        'youNationality' => 'required|max:50',
+        'youAge' => 'required|max:2',
+      ]);
+
 
       $post = new blog();
       $post->title = $request['title'];

@@ -91,10 +91,10 @@
                 </div>
 
                 <div class="links">
-                    <a href="blog">Blogs</a>
+                    <a href="{{ url('blog') }}">Blogs</a>
                     <a href="#">Random Location</a>
-                    <a href="#">Product List</a>
-                    <a href="#">Travel ads</a>
+                    <a href="{{ url('shop') }}">Product List</a>
+                    <a href="{{ url('travelads') }}">Travel ads</a>
                     <a href="ourJourney">Our Journey</a>
                     <a href="contact">Contact</a>
                 </div>
