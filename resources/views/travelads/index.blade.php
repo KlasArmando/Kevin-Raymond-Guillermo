@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
 
-<a href="../travelads/create" class="myButton">Create New Ad</a>
+<a href="travelads/create" class="myButton">Create New Ad</a>
 
 <div class="tablead">
     <table border="9">
@@ -18,7 +18,7 @@
                 <td>{{$travelad->name}}</td>
                 <td>{{$travelad->title}}</td>
                 <td>{{$travelad->description}}</td>
-                <td><a href="../comments/create" class="commentbutton">Comment</a></td>
+                <td><a href="comments/create" class="commentbutton">Comment</a></td>
                 <td>
 
                     <form action="{{route('travelads.destroy', $travelad)}}" method="post">

@@ -18,11 +18,11 @@ use Illuminate\Support\Facades\Input;
 Route::resource('/blog', 'BlogController');
 Route::resource('/user', 'HomeController');
 
-Route::resource('shop' ,"ShopController");
-Route::resource('comment' ,"CommentsController");
+Route::resource('/shop' ,"ShopController");
+Route::resource('/comment' ,"CommentsController");
 
-Route::resource('travelads', 'TraveladsController');
-Route::resource('comments', 'CommentController');
+Route::resource('/travelads', 'TraveladsController');
+Route::resource('/comments', 'CommentController');
 
 Route::get('login', array('uses' => 'HomeController@showLogin'));
 Route::post('login', array('uses' => 'HomeController@doLogin'));

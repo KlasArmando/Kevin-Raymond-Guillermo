@@ -80,7 +80,7 @@
 
     <hr>
 
-    <a href="../shop/create" class="myButton">Create New Item</a>
+    <a href="shop/create" class="myButton">Create New Item</a>
     <div class="table">
         <table border="3">
             <tr>
